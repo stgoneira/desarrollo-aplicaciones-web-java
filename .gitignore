@@ -1,0 +1,9 @@
+bin
+jar
+libros
+prueba
+out 
+*.bak
+*.class
+~$*.pptx
+.~*.pptx
