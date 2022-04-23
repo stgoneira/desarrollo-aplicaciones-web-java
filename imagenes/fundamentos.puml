@@ -1,0 +1,35 @@
+@startmindmap 
+*[#Orange] Fundamentos Java 
+**[#Lime] Variables 
+***[#DarkCyan] Tipos de Datos  
+****[#Coral] Textos
+****[#Coral] Números 
+****[#Coral] Booleanos  
+****[#Coral] Colecciones   
+*****[#DarkViolet] Listas 
+*****[#DarkViolet] Sets  
+*****[#DarkViolet] Colas  
+*****[#DarkViolet] Mapas  
+****[#Coral] Fechas  
+****[#Coral] Clases   
+***[#DarkCyan] Alcance   
+****[#Coral] Variables de Instancia 
+****[#Coral] Variables de Clase 
+****[#Coral] Variables Locales 
+**[#Lime] Condicionales 
+***[#DarkCyan] if else 
+***[#DarkCyan] switch 
+***[#DarkCyan] operador ternario 
+**[#Lime] Bucles (Loops)
+***[#DarkCyan] while 
+***[#DarkCyan] for          
+**[#Lime] POO  
+***[#DarkCyan] Clases 
+****[#Coral] Atributos 
+****[#Coral] Métodos 
+*****[#DarkViolet] Parámetros   
+***[#DarkCyan] Interfaces   
+***[#DarkCyan] Herencia  
+**[#Lime] Excepciones  
+**[#Lime] Comentarios 
+@endmindmap 
