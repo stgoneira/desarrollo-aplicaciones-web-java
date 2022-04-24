@@ -66,17 +66,32 @@ Temáticas
 	* Jetty 
 	* Undertow 
 - Servlets 
-- WAR (Web ARchive) 
+	* Ciclo de Vida 
+- Configuración (web.xml)
 - Java Server Pages (JSP) 
-- JSTL 
+	* Expression Language (EL) 
+	* JSTL 
 - Protocolo HTTP 
+	* Métodos 
+	* Request 
+	* Response 
 - Base de Datos 
-- Piscinas de Conexiones (Pool)
+	* Conexión 
+	* Connection Pool
 - Maven 
+- WAR (Web ARchive) 
 - Sesiones 
-- Trabajo con Archivos 
 - Patrones de Diseño 
-	* MVC 
+	* Model-View-Controller (MVC)
+	* Singleton
+	* Factory 
+	* Decorator 
+	* Observer 
+	* Facade 
+	* Data Access Object (DAO) 
+	* Data Transfer Object (DTO) 
+- Trabajo con Archivos 
+	
 
 
 ///////////////////////////////////////////  
