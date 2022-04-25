@@ -76,6 +76,19 @@ public class HolaMundoServlet extends HttpServlet {
 Si mi archivo se llama [web-hola-mundo.war](#) y hago el deploy sobre Tomcat, entonces mi Servlet se vería en:
 http://localhost:8080/web-hola-mundo/HolaMundoServlet
 
+
+---
+## [Servlet](#)
+```java[] 
+// format 1
+response.setContentType("text/html");
+response.setCharacterEncoding("UTF-8");
+// forma 2 
+response.setHeader("Content-Type", "text/html;charset=UTF-8");
+// forma 3
+response.setContentType("text/html;charset=UTF-8");
+
+```
 				    </textarea>
 				</section>
 			</div>
