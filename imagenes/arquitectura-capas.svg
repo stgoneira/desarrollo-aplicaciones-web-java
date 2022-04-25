@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="arquitectura-capas.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="0.58457335"
+     inkscape:cx="384.04077"
+     inkscape:cy="477.27116"
+     inkscape:window-width="1366"
+     inkscape:window-height="731"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="148.5,247.71337"
+       orientation="1,0"
+       id="guide1644" />
+    <sodipodi:guide
+       position="86.93083,232.08193"
+       orientation="1,0"
+       id="guide1646" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#36688d;fill-opacity:1;stroke:#000000;stroke-width:0.264583"
+       id="rect846"
+       width="181.03688"
+       height="52.214531"
+       x="12.134134"
+       y="25.115883"
+       ry="6.3521056" />
+    <rect
+       style="fill:#f3cd05;fill-opacity:1;stroke:#000000;stroke-width:0.113392"
+       id="rect846-35"
+       width="53.725906"
+       height="32.315521"
+       x="33.204929"
+       y="32.602554"
+       ry="3.9313121" />
+    <rect
+       style="fill:#f3cd05;fill-opacity:1;stroke:#000000;stroke-width:0.113392"
+       id="rect846-35-6"
+       width="53.725906"
+       height="32.315521"
+       x="93.809998"
+       y="32.602558"
+       ry="3.9313121" />
+    <rect
+       style="fill:#36688d;fill-opacity:1;stroke:#000000;stroke-width:0.264583"
+       id="rect846-6"
+       width="181.03688"
+       height="52.214531"
+       x="12.182961"
+       y="196.46877"
+       ry="6.3521056" />
+    <rect
+       style="fill:#36688d;fill-opacity:1;stroke:#000000;stroke-width:0.362236"
+       id="rect846-3"
+       width="180.93922"
+       height="97.92305"
+       x="12.182961"
+       y="89.020844"
+       ry="11.912728" />
+    <rect
+       style="fill:#f18904;fill-opacity:1;stroke:#000000;stroke-width:0.204334"
+       id="rect846-7"
+       width="164.63512"
+       height="34.244663"
+       x="18.913271"
+       y="92.023201"
+       ry="4.1659994" />
+    <rect
+       style="fill:#f18904;fill-opacity:1;stroke:#000000;stroke-width:0.162757"
+       id="rect846-7-5"
+       width="104.45293"
+       height="34.244663"
+       x="79.74926"
+       y="131.798"
+       ry="4.1659994" />
+    <rect
+       style="fill:#bda589;fill-opacity:1;stroke:#000000;stroke-width:0.114604"
+       id="rect846-7-5-2"
+       width="51.716473"
+       height="34.292816"
+       x="35.214355"
+       y="204.39589"
+       ry="4.1718574" />
+    <rect
+       style="fill:#bda589;fill-opacity:1;stroke:#000000;stroke-width:0.114604"
+       id="rect846-7-5-2-9"
+       width="51.716473"
+       height="34.292816"
+       x="96.783524"
+       y="204.09335"
+       ry="4.1718574" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.41063px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.185266"
+       x="38.819759"
+       y="50.689247"
+       id="text6028"><tspan
+         sodipodi:role="line"
+         id="tspan6026"
+         style="stroke-width:0.185266"
+         x="38.819759"
+         y="50.689247">Navegador</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.41063px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.185266"
+       x="98.475212"
+       y="51.320274"
+       id="text6028-1"><tspan
+         sodipodi:role="line"
+         id="tspan6026-2"
+         style="stroke-width:0.185266"
+         x="98.475212"
+         y="51.320274">App Cliente</tspan></text>
+    <rect
+       style="fill:#f3cd05;fill-opacity:1;stroke:#000000;stroke-width:0.0711682"
+       id="rect846-35-7"
+       width="33.237411"
+       height="20.576683"
+       x="26.845284"
+       y="98.700844"
+       ry="2.5032358" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.41063px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.185266"
+       x="37.410198"
+       y="111.15797"
+       id="text6028-3"><tspan
+         sodipodi:role="line"
+         id="tspan6026-6"
+         style="stroke-width:0.185266"
+         x="37.410198"
+         y="111.15797">JSP</tspan></text>
+    <rect
+       style="fill:#f3cd05;fill-opacity:1;stroke:#000000;stroke-width:0.0711682"
+       id="rect846-35-7-7"
+       width="33.237411"
+       height="20.576683"
+       x="86.930832"
+       y="138.77394"
+       ry="2.5032358" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.41063px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.185266"
+       x="62.113533"
+       y="219.82541"
+       id="text6028-3-9"><tspan
+         sodipodi:role="line"
+         id="tspan6026-6-20"
+         style="text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.185266"
+         x="62.113533"
+         y="219.82541">Base de </tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.185266"
+         x="62.113533"
+         y="229.0887"
+         id="tspan17268">Datos</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.41063px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.185266"
+       x="123.59161"
+       y="219.12997"
+       id="text6028-3-9-7"><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.185266"
+         x="123.59161"
+         y="219.12997"
+         id="tspan17268-9">Otros </tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.185266"
+         x="123.59161"
+         y="228.39326"
+         id="tspan21424">Sistemas</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.41063px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.185266"
+       x="96.804733"
+       y="151.55013"
+       id="text6028-3-9-2"><tspan
+         sodipodi:role="line"
+         id="tspan6026-6-20-3"
+         style="stroke-width:0.185266"
+         x="96.804733"
+         y="151.55013">EJB</tspan></text>
+    <rect
+       style="fill:#f3cd05;fill-opacity:1;stroke:#000000;stroke-width:0.0782451"
+       id="rect846-35-7-0"
+       width="40.190086"
+       height="20.569607"
+       x="64.086662"
+       y="98.590034"
+       ry="2.5023749" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.41063px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.185266"
+       x="70.943863"
+       y="111.04361"
+       id="text6028-3-6"><tspan
+         sodipodi:role="line"
+         id="tspan6026-6-2"
+         style="stroke-width:0.185266"
+         x="70.943863"
+         y="111.04361">Servlet</tspan></text>
+    <rect
+       style="fill:#f3cd05;fill-opacity:1;stroke:#000000;stroke-width:0.0782451"
+       id="rect846-35-7-0-6"
+       width="40.190086"
+       height="20.569607"
+       x="108.63029"
+       y="98.800774"
+       ry="2.5023749" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.41063px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.185266"
+       x="116.01664"
+       y="111.25436"
+       id="text6028-3-6-1"><tspan
+         sodipodi:role="line"
+         id="tspan6026-6-2-8"
+         style="stroke-width:0.185266"
+         x="116.01664"
+         y="111.25436">EL/JSTL</tspan></text>
+  </g>
+</svg>
