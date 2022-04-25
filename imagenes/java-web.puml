@@ -1,0 +1,30 @@
+@startmindmap 
+*[#black] <color:white>Java Web 
+**[#FireBrick] <color:white>Servlets   
+***[#Orange] Métodos HTTP 
+***[#Orange] Request 
+***[#Orange] Response 
+***[#Orange] Dispatch and Forward       
+**[#FireBrick] <color:white>J S P 
+***[#Orange] Expression Language   
+***[#Orange] J S T L 
+****[#IndianRed] Core  
+****[#IndianRed] Functions
+****[#IndianRed] I18N 
+****[#IndianRed] SQL 
+****[#IndianRed] XML 
+***[#Orange] Directivas 
+***[#Orange] Declaraciones 
+***[#Orange] Scriptlets 
+***[#Orange] Expressions   
+**[#FireBrick] <color:white>Servidores  
+***[#Orange] Servlet Containers  
+****[#IndianRed] Tomcat 
+****[#IndianRed] Jetty 
+***[#Orange] Servidores JEE  
+****[#IndianRed] Payara  
+****[#IndianRed] Glassfish 
+****[#IndianRed] WildFly 
+****[#IndianRed] WebLogic
+****[#IndianRed] WebSphere    
+@endmindmap 
