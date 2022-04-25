@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>JSTL - Desarrollo Aplicaciones Web Java</title>
+		<title>Base de Datos - Desarrollo Aplicaciones Web Java</title>
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.0/reset.min.css" integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.0/reveal.min.css" integrity="sha512-e3dnmFe5hH2bJx1MvUU3PFToGVQ2xykp/VGERCkuh4lTGMJ5QuxKFRIwix8DfnfkavwJiL6rehb9e1d6mFLwlg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,14 +21,117 @@
 				<section data-separator="^---$" data-separator-vertical="^===$" data-markdown data-line-numbers>
     				<textarea data-template>
 ## [Desarrollo Aplicaciones Web Java](#)
-## JSTL
+## Base de Datos 
 [Santiago Neira](#)
 
 ---
 ## [Introducción](#)
 
+---
+## [Connection Pool](#)
 
+===
+## [Configuración Tomcat 10](#)
 
+1. Agregar Driver JDBC carpeta lib
+2. Agregar Recurso Global o Localizado con Datos de Conexión
+
+===
+## [Configuración Recurso](#)
+Ejemplo en archivo context.xml: 
+```xml
+<Context>
+	<Resource 
+		name="jdbc/postgres" 
+		auth="Container"
+		type="javax.sql.DataSource" 
+		driverClassName="org.postgresql.Driver"
+		url="jdbc:postgresql://miservidor.com:5432/mibd?sslmode=allow&#38;sslfactory=org.postgresql.ssl.NonValidatingFactory"
+		username="miusuario"
+		password="micontrasena" 
+		maxTotal="2" 
+		maxIdle="1" 
+		maxWaitMillis="-1"
+	/>
+	<!--  pueden haber más configuraciones -->  
+</Context>    
+```
+
+---
+## [Uso Conexión ](#)
+
+1. En web.xml del Proyecto Agregar resource-ref 
+2. Uso en el proyecto 
+	* Uso por SQL TagLib
+	* Uso en código Java 	 
+
+===
+## [web.xml del proyecto](#)
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <!-- pueden haber configuración de welcome-files, servlets y otros ... -->
+  <resource-ref>
+  	<description>PostgreSQL ElephantQL</description>
+  	<res-ref-name>jdbc/postgres</res-ref-name>
+  	<res-type>javax.sql.DataSource</res-type>
+  	<res-auth>Container</res-auth>
+  </resource-ref>
+  <!-- pueden haber configuración de welcome-files, servlets y otros ... -->
+</web-app>
+```
+
+===
+## [Uso por SQL TagLib](#)
+```jsp[]   
+<sql:query var="rs" dataSource="jdbc/postgres">
+	SELECT * FROM alumnos
+</sql:query>
+
+<ol>
+<c:forEach var="row" items="${rs.rows}">
+	<li>Nombre: ${row.nombre}</li>
+</c:forEach>
+</ol>
+```
+
+===
+## [Uso por Java](#)
+```java[] 
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	try {
+		Context contexto 		= new InitialContext();
+		Context envContexto 	= (Context) contexto.lookup("java:/comp/env");
+		DataSource datasource 	= (DataSource) envContexto.lookup("jdbc/postgres");
+		try (				
+			Connection conexion = datasource.getConnection();
+			Statement statement = conexion.createStatement();				
+		){
+			List<Persona> personas = new ArrayList<>();
+			ResultSet resultado = statement.executeQuery("SELECT * FROM alumnos");
+			while( resultado.next() ) {
+				Persona p = new Persona( resultado.getString("nombre") );
+				personas.add(p);
+			}
+			request.setAttribute("personas", personas);
+			request.getRequestDispatcher("/WEB-INF/jsp/personas.jsp").forward(request, response);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}			
+	} catch (NamingException e) {
+		e.printStackTrace();
+	} 		
+}
+```
+
+---
+## [Enlaces](#)
+
+https://tomcat.apache.org/tomcat-10.0-doc/jdbc-pool.html#Code_Example
+https://tomcat.apache.org/tomcat-9.0-doc/jndi-datasource-examples-howto.html
+https://tomcat.apache.org/tomcat-9.0-doc/config/context.html
+https://tomcat.apache.org/tomcat-9.0-doc/config/host.html
 
 				    </textarea>
 				</section>
