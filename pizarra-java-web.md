@@ -1,6 +1,67 @@
 Desarrollo Aplicaciones Web en Java
 ====================================
 
+Lunes  
+2022-04-25
+Sesión 5 de 17 
+
+BREAK 20:30 hasta 20:45hrs
+
+Para hoy 
+---------- 
+- JSP 
+- JSTL 
+- Lo aconsejado y desaconsejado 
+
+Aprendizajes Esperados 
+-----------------------
+5.1. Conocer las tecnologías disponibles en Java Web 
+5.2. Entender cómo éstas se relacionan 
+5.3. Instalar librerías de JSTL en Tomcat 10 
+5.4. Entender y aplicar las etiquetas JSTL más importantes 
+5.5. Conocer las directivas, declaraciones, scriptlets y expresiones JSP 
+5.6. Entender el uso aconsejado y desaconsejado de los elementos JSP 
+
+5.3 Instalación JSTL en Tomcat 10 
+----------------------------------
+1) Descargar librerías JSTL (API y normal) 
+2) Colocar los JAR en WEB-INF/lib 
+
+Temáticas 
+----------- 
+
+- Servlet Container 
+	* Tomcat 
+	* Jetty 
+- Servlets 
+	* Ciclo de Vida 
+- Configuración (web.xml)
+- Java Server Pages (JSP) 
+	* Expression Language (EL) 
+	* JSTL 
+- Protocolo HTTP 
+	* Métodos 
+	* Request 
+	* Response 
+- Base de Datos 
+	* Conexión 
+	* Connection Pool
+- Maven 
+- WAR (Web ARchive) 
+- Sesiones 
+- Patrones de Diseño 
+	* Model-View-Controller (MVC)
+	* Singleton
+	* Factory 
+	* Decorator 
+	* Observer 
+	* Facade 
+	* Data Access Object (DAO) 
+	* Data Transfer Object (DTO) 
+- Trabajo con Archivos 
+
+///////////////////////////////////////////  
+
 Sábado  
 2022-04-23
 Sesión 4 de 17 
@@ -56,41 +117,6 @@ https://jakarta.ee/xml/ns/jakartaee/
 https://maven.apache.org/plugins/maven-war-plugin/usage.html
 
 https://blog.payara.fish/getting-started-with-jakarta-ee-9-hello-world
-
-
-Temáticas 
------------ 
-
-- Servlet Container 
-	* Tomcat 
-	* Jetty 
-- Servlets 
-	* Ciclo de Vida 
-- Configuración (web.xml)
-- Java Server Pages (JSP) 
-	* Expression Language (EL) 
-	* JSTL 
-- Protocolo HTTP 
-	* Métodos 
-	* Request 
-	* Response 
-- Base de Datos 
-	* Conexión 
-	* Connection Pool
-- Maven 
-- WAR (Web ARchive) 
-- Sesiones 
-- Patrones de Diseño 
-	* Model-View-Controller (MVC)
-	* Singleton
-	* Factory 
-	* Decorator 
-	* Observer 
-	* Facade 
-	* Data Access Object (DAO) 
-	* Data Transfer Object (DTO) 
-- Trabajo con Archivos 
-	
 
 
 ///////////////////////////////////////////  
