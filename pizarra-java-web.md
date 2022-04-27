@@ -1,31 +1,53 @@
 Desarrollo Aplicaciones Web en Java
 ====================================
 
-Lunes  
-2022-04-25
-Sesión 5 de 17 
+Martes 
+2022-04-26
+Sesión 6 de 17 
 
-BREAK 20:30 hasta 20:45hrs
+BREAK de 20:00 a 20:15hrs 
 
 Para hoy 
----------- 
-- JSP 
-- JSTL 
-- Lo aconsejado y desaconsejado 
+----------
+- Bases de Datos 
+- Piscina de conexiones 
+- JSTL SQL 
+- JNDI 
 
 Aprendizajes Esperados 
------------------------
-5.1. Conocer las tecnologías disponibles en Java Web 
-5.2. Entender cómo éstas se relacionan 
-5.3. Instalar librerías de JSTL en Tomcat 10 
-5.4. Entender y aplicar las etiquetas JSTL más importantes 
-5.5. Conocer las directivas, declaraciones, scriptlets y expresiones JSP 
-5.6. Entender el uso aconsejado y desaconsejado de los elementos JSP 
+------------------------
+- Distinguir las ventajas de usar una piscina de conexiones 
+- Aplicar SQL y Java para mantener entidades 
 
-5.3 Instalación JSTL en Tomcat 10 
-----------------------------------
-1) Descargar librerías JSTL (API y normal) 
-2) Colocar los JAR en WEB-INF/lib 
+
+Actividad 1 - Crear Piscina de Conexiones 
+------------------------------------------ 
+1. Si no tenemos el Driver JDBC, debemos descargarlo (JAR) 
+2. Vamos a colocar el JAR JDBC en la carpeta lib de Tomcat 
+3. Editar el archivo de configuración de Tomcat (dentro de Eclipse) llamado context.xml. Agregamos la etiqueta Resource con los datos de conexión.
+
+Actividad 2 - Utilizar una conexión de la piscina 
+--------------------------------------------------
+1. Crear un proyecto java web 
+2. Agregar los 2 JAR para soporte de JSTL 
+3. Editar el archivo web.xml para referenciar la piscina de conexiones 
+4. Crear un JSP para consultar alguna tabla 
+
+* IMPORTANTE: Debe tener creada una tabla con datos 
+
+Actividad 3 - Crear Mantenedor (CRUD) Alumnos 
+--------------------------------------------------
+1. Crear formulario con campos nombre y carrera. El formulario debe enviar los datos por POST 
+2. Crear Servlet para procesar los datos del formulario 
+3. En el Servlet rescatar una conexión de la piscina 
+4. Insertar los datos a la tabla 
+5. Redirigir a página que muestra todos los datos de la tabla 
+
+Actividad 3 - Carreras 
+----------------------------------------------
+Cree una 2da entidad en su proyecto para:
+3.1) Mostrar todos los registros de esa tabla 
+3.2) Poder insertar datos a la tabla desde un formulario web 
 
 Temáticas 
 ----------- 
@@ -59,6 +81,35 @@ Temáticas
 	* Data Access Object (DAO) 
 	* Data Transfer Object (DTO) 
 - Trabajo con Archivos 
+
+///////////////////////////////////////////  
+
+
+Lunes  
+2022-04-25
+Sesión 5 de 17 
+
+BREAK 20:30 hasta 20:45hrs
+
+Para hoy 
+---------- 
+- JSP 
+- JSTL 
+- Lo aconsejado y desaconsejado 
+
+Aprendizajes Esperados 
+-----------------------
+5.1. Conocer las tecnologías disponibles en Java Web 
+5.2. Entender cómo éstas se relacionan 
+5.3. Instalar librerías de JSTL en Tomcat 10 
+5.4. Entender y aplicar las etiquetas JSTL más importantes 
+5.5. Conocer las directivas, declaraciones, scriptlets y expresiones JSP 
+5.6. Entender el uso aconsejado y desaconsejado de los elementos JSP 
+
+5.3 Instalación JSTL en Tomcat 10 
+----------------------------------
+1) Descargar librerías JSTL (API y normal) 
+2) Colocar los JAR en WEB-INF/lib 
 
 ///////////////////////////////////////////  
 
