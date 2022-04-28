@@ -1,6 +1,127 @@
 Desarrollo Aplicaciones Web en Java
 ====================================
 
+Miércoles 
+2022-04-27
+Sesión 7 de 17 
+
+BREAK de 20:10 a 20:25hrs 
+
+Para hoy 
+----------
+- CRUD 
+- Enunciado Trabajo Módulo  
+
+Ejercicio Centro Formación Técnica  
+------------------------------------
+El CFT necesita matricular a sus alumnos en alguna de las carreras disponibles. 
+
+Entidades: Alumno y Carrera 
+
+Propuesta de Organización de Solución (opcional)
+-------------------------------------------------
+
+- 1 Servlet por cada entidad (CRUD) 
+- Organización de los archivos:
+
+src/main/java 
+	modelo 
+		Alumno.java 
+		Carrera.java 
+	controlador
+		AlumnoController.java 
+		CarreraController.java 
+webapp
+	WEB-INF
+		jsp/vista
+			alumno 
+				alumno-form.jsp
+				alumno-listado.jsp 
+			carrera 
+				carrera-form.jsp 
+				carrera-listado.jsp 
+	index.jsp 
+
+Servlets 
+---------
+Ver form: GET 
+(C)reate: POST 
+(R)ead:   GET  
+(U)pdate: POST   
+(D)elete: GET   	
+
+Iteración 1
+------------
+Iteración sólo tiene 1 entidad para hacer el CRUD.
+
+Alumno: nombre y carrera 
+
+CREATE TABLE alumnos(id serial PRIMARY KEY, nombre CHAR(20), carrera CHAR(20));
+
+Iteración 2
+------------
+Iteración trabaja con 2 entidades:
+
+1) Alumno: nombre y carrera 
+2) Carrera: nombre 
+
+Iteración 3
+------------
+Vamos a agregar más campos, filtros y validaciones.
+
+
+Trabajos Módulo 5
+-------------------
+1) Trabajo Práctico Final M5 (4 de mayo)
+Instituto de Capacitación "Java People"
+Resolver problema sin EJBs 
+
+2) Evaluación Portafolio Módulo 5 (3 de mayo)
+Servicios de Reparación de Electrodomésticos 
+
+2) Evidencia Portafolio Módulo 5 23-04-2022 
+Ejercicio de cálculo de áreas 
+
+3) Evidencia Portafolio Módulo 30-04-2022 
+CRUD de las entidades Alumno y Carrera 
+
+
+Temáticas 
+----------- 
+
+- Servlet Container 
+	* Tomcat 
+	* Jetty 
+- Servlets 
+	* Ciclo de Vida 
+- Configuración (web.xml)
+- Java Server Pages (JSP) 
+	* Expression Language (EL) 
+	* JSTL 
+- Protocolo HTTP 
+	* Métodos 
+	* Request 
+	* Response 
+- Base de Datos 
+	* Conexión 
+	* Connection Pool
+- Maven 
+- WAR (Web ARchive) 
+- Sesiones 
+- Patrones de Diseño 
+	* Model-View-Controller (MVC)
+	* Singleton
+	* Factory 
+	* Decorator 
+	* Observer 
+	* Facade 
+	* Data Access Object (DAO) 
+	* Data Transfer Object (DTO) 
+- Trabajo con Archivos 
+
+///////////////////////////////////////////  
+
+
 Martes 
 2022-04-26
 Sesión 6 de 17 
@@ -49,38 +170,7 @@ Cree una 2da entidad en su proyecto para:
 3.1) Mostrar todos los registros de esa tabla 
 3.2) Poder insertar datos a la tabla desde un formulario web 
 
-Temáticas 
------------ 
 
-- Servlet Container 
-	* Tomcat 
-	* Jetty 
-- Servlets 
-	* Ciclo de Vida 
-- Configuración (web.xml)
-- Java Server Pages (JSP) 
-	* Expression Language (EL) 
-	* JSTL 
-- Protocolo HTTP 
-	* Métodos 
-	* Request 
-	* Response 
-- Base de Datos 
-	* Conexión 
-	* Connection Pool
-- Maven 
-- WAR (Web ARchive) 
-- Sesiones 
-- Patrones de Diseño 
-	* Model-View-Controller (MVC)
-	* Singleton
-	* Factory 
-	* Decorator 
-	* Observer 
-	* Facade 
-	* Data Access Object (DAO) 
-	* Data Transfer Object (DTO) 
-- Trabajo con Archivos 
 
 ///////////////////////////////////////////  
 
