@@ -72,6 +72,8 @@ Vamos a agregar más campos, filtros y validaciones.
 
 Trabajos Módulo 5
 -------------------
+Grupos de hasta 4 personas.
+
 1) Trabajo Práctico Final M5 (4 de mayo)
 Instituto de Capacitación "Java People"
 Resolver problema sin EJBs 
