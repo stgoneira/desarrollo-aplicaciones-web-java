@@ -1,6 +1,84 @@
 Desarrollo Aplicaciones Web en Java
 ====================================
 
+Jueves 
+2022-04-28
+Sesión 8 de 17 
+
+Para hoy 
+----------
+- CRUD 
+
+Actividad Edición (CRUD)
+-------------------------
+1) Editamos el enlace de edición en la tabla o listado de Alumnos (entidad) 
+ej: <a href="${pageContext.request.contextPath}/AlumnoController?accion=editar&amp;id=${alumno.id}">Editar</a>
+
+2) Recuerde que los enlaces siempre envía un mensaje por el método GET al Servlet. 
+Por lo tanto, agregamos un bloque al switch del doGet() del Servlet para soportar la acción "editar". 
+
+3) En el bloque del switch (editar), recuperamos el parámetro enviado por la URL id (representa el ID del alumno). 
+
+4) Generamos un método getAlumnoById(int alumnoId) para recuperar el Alumno desde la BD. 
+
+5) El método getAlumnoById() lo invocamos desde el bloque switch (editar) para recuperar el Alumno desde la BD. Para enviarlo al JSP (vista del formulario) y que sea posible la edición (despachar).
+
+6) En el JSP del formulario configuramos los atributos value usando Expression Language para mostrar los valores desde el objeto alumno 
+
+7) Finalmente, en el método doPost() del Servlet agregamos el bloque correspondiente para cuando el id del alumno NO es igual a 0 y queremos editar en vez de insertar. 
+
+Trabajos Módulo 5
+-------------------
+Grupos de hasta 4 personas.
+
+1) Trabajo Práctico Final M5 (4 de mayo)
+Instituto de Capacitación "Java People"
+Resolver problema sin EJBs 
+
+2) Evaluación Portafolio Módulo 5 (3 de mayo)
+Servicios de Reparación de Electrodomésticos 
+
+3) Evidencia Portafolio Módulo 5 23-04-2022 
+Ejercicio de cálculo de áreas 
+
+4) Evidencia Portafolio Módulo 30-04-2022 
+CRUD de las entidades Alumno y Carrera 
+
+Temáticas 
+----------- 
+
+- Servlet Container 
+	* Tomcat 
+	* Jetty 
+- Servlets 
+	* Ciclo de Vida 
+- Configuración (web.xml)
+- Java Server Pages (JSP) 
+	* Expression Language (EL) 
+	* JSTL 
+- Protocolo HTTP 
+	* Métodos 
+	* Request 
+	* Response 
+- Base de Datos 
+	* Conexión 
+	* Connection Pool
+- Maven 
+- WAR (Web ARchive) 
+- Sesiones 
+- Patrones de Diseño 
+	* Model-View-Controller (MVC)
+	* Singleton
+	* Factory 
+	* Decorator 
+	* Observer 
+	* Facade 
+	* Data Access Object (DAO) 
+	* Data Transfer Object (DTO) 
+- Trabajo con Archivos 
+
+///////////////////////////////////////////  
+
 Miércoles 
 2022-04-27
 Sesión 7 de 17 
@@ -69,57 +147,6 @@ Iteración 3
 ------------
 Vamos a agregar más campos, filtros y validaciones.
 
-
-Trabajos Módulo 5
--------------------
-Grupos de hasta 4 personas.
-
-1) Trabajo Práctico Final M5 (4 de mayo)
-Instituto de Capacitación "Java People"
-Resolver problema sin EJBs 
-
-2) Evaluación Portafolio Módulo 5 (3 de mayo)
-Servicios de Reparación de Electrodomésticos 
-
-2) Evidencia Portafolio Módulo 5 23-04-2022 
-Ejercicio de cálculo de áreas 
-
-3) Evidencia Portafolio Módulo 30-04-2022 
-CRUD de las entidades Alumno y Carrera 
-
-
-Temáticas 
------------ 
-
-- Servlet Container 
-	* Tomcat 
-	* Jetty 
-- Servlets 
-	* Ciclo de Vida 
-- Configuración (web.xml)
-- Java Server Pages (JSP) 
-	* Expression Language (EL) 
-	* JSTL 
-- Protocolo HTTP 
-	* Métodos 
-	* Request 
-	* Response 
-- Base de Datos 
-	* Conexión 
-	* Connection Pool
-- Maven 
-- WAR (Web ARchive) 
-- Sesiones 
-- Patrones de Diseño 
-	* Model-View-Controller (MVC)
-	* Singleton
-	* Factory 
-	* Decorator 
-	* Observer 
-	* Facade 
-	* Data Access Object (DAO) 
-	* Data Transfer Object (DTO) 
-- Trabajo con Archivos 
 
 ///////////////////////////////////////////  
 

@@ -27,8 +27,8 @@
 					<td><c:out value="${alumno.nombre}" /></td>
 					<td><c:out value="${alumno.carrera}" /></td>
 					<td>
-						<a href="#">Editar</a>
-						<a href="#">Eliminar</a>
+						<a href="${pageContext.request.contextPath}/AlumnoController?accion=editar&amp;id=${alumno.id}">Editar</a> <%-- contextPath en este caso es /cft-web --%>
+						<a href="${pageContext.request.contextPath}/AlumnoController?accion=eliminar&amp;id=${alumno.id}">Eliminar</a> <%-- contextPath en este caso es /cft-web --%>
 					</td>
 				</tr>
 			</c:forEach>			

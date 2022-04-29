@@ -30,6 +30,37 @@ public class AlumnoController extends HttpServlet {
 		String accion = request.getParameter("accion");
 		String vistaJSP = "";
 		switch (accion) {
+			case "eliminar":
+				try {
+					int alumnoId = Integer.parseInt( request.getParameter("id") );
+					eliminarAlumno( alumnoId );
+					response.sendRedirect("/cft-web/AlumnoController?accion=listar");
+				} catch (SQLException sqle) {
+					sqle.printStackTrace();
+					response.sendError(500);
+				} catch (NamingException ne) {
+					ne.printStackTrace();
+					response.sendError(500);
+				}				
+				break;
+			case "editar":
+				try {
+					int alumnoId = Integer.parseInt( request.getParameter("id") );
+					Alumno alumno = getAlumnoById( alumnoId );
+					request.setAttribute("alumno", alumno);
+					vistaJSP = "/WEB-INF/jsp/vista/alumno/alumno-form.jsp";
+					request
+						.getRequestDispatcher(vistaJSP)
+						.forward(request, response)
+					;
+				} catch (SQLException sqle) {
+					sqle.printStackTrace();
+					response.sendError(500);
+				} catch (NamingException ne) {
+					ne.printStackTrace();
+					response.sendError(500);
+				}
+				break;
 			case "form":
 				vistaJSP = "/WEB-INF/jsp/vista/alumno/alumno-form.jsp";
 				request
@@ -71,12 +102,21 @@ public class AlumnoController extends HttpServlet {
 			Alumno alumnoNuevo = new Alumno(nombre, carrera);
 			try {
 				crearAlumno(alumnoNuevo);
+				response.sendRedirect("/cft-web/AlumnoController?accion=listar");
+			} catch (SQLException | NamingException e) {				
+				e.printStackTrace();
+				response.sendError(500);
+			}
+		} else {
+			// editar
+			Alumno alumnoAEditar = new Alumno(id, nombre, carrera);
+			try {
+				editarAlumno(alumnoAEditar);
+				response.sendRedirect("/cft-web/AlumnoController?accion=listar");
 			} catch (SQLException | NamingException e) {
 				e.printStackTrace();
+				response.sendError(500);
 			}
-			response.sendRedirect("/cft-web/AlumnoController?accion=listar");
-		} else {
-			// editar 
 		}
 	}
 	
@@ -84,6 +124,47 @@ public class AlumnoController extends HttpServlet {
 		InitialContext contextoInicial = new InitialContext();
 		DataSource dataSource = (DataSource) contextoInicial.lookup("java:comp/env/jdbc/postgres");
 		return dataSource.getConnection();
+	}
+	
+	public Alumno getAlumnoById(int alumnoId) throws SQLException, NamingException {
+		try (
+			Connection conexion = getConexion();
+			PreparedStatement declaracion = conexion.prepareStatement("SELECT * FROM alumnos WHERE id = ?");
+		) {
+			declaracion.setInt(1, alumnoId);
+			ResultSet rs = declaracion.executeQuery();
+			if(rs.next()) {
+				int id = rs.getInt("id");
+				String nombre = rs.getString("nombre");
+				String carrera = rs.getString("carrera");
+				return new Alumno(id, nombre, carrera);
+			} else {
+				return null;
+			}
+		}	
+	}
+	
+	
+	public void eliminarAlumno(int alumnoId) throws SQLException, NamingException {
+		try (
+			Connection conexion = getConexion();
+			PreparedStatement declaracion = conexion.prepareStatement("DELETE FROM alumnos WHERE id = ?");
+		) {
+			declaracion.setInt(1, alumnoId);
+			int filasEliminadas = declaracion.executeUpdate();
+		}	
+	}
+	
+	public void editarAlumno(Alumno alumno) throws SQLException, NamingException {
+		try (
+			Connection conexion = getConexion();
+			PreparedStatement declaracion = conexion.prepareStatement("UPDATE alumnos SET nombre = ?, carrera = ? WHERE id = ?");
+		) {
+			declaracion.setString(1, alumno.getNombre());
+			declaracion.setString(2, alumno.getCarrera());
+			declaracion.setInt(3, alumno.getId());
+			declaracion.executeUpdate();
+		}	
 	}
 		
 	// Trae todos los alumnos desde la BD 
