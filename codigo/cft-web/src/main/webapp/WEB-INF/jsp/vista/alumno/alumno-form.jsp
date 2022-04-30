@@ -10,17 +10,21 @@
 		<div class="container">
 			<h1>Alumno</h1>
 			<form method="POST" action="/cft-web/AlumnoController">
-			<input type="hidden" name="id" value="${alumno.id}" />
-			<div class="mb-3">
-	  			<label for="nombre" class="form-label">Nombre:</label>
-	  			<input type="text" class="form-control" value="${alumno.nombre}" id="nombre" name="nombre" />
-			</div>
-			<div class="mb-3">
-	  			<label for="carrera" class="form-label">Carrera:</label>
-	  			<input type="text" class="form-control" value="${alumno.carrera}" id="carrera" name="carrera" />
-			</div>
-			<button class="btn btn-primary" type="submit">Guardar</button>
-		</form>
+				<input type="hidden" name="id" value="${alumno.id}" />
+				<div class="mb-3">
+		  			<label for="nombre" class="form-label">Nombre:</label>
+		  			<input type="text" class="form-control" value="${alumno.nombre}" id="nombre" name="nombre" />
+				</div>
+				<div class="mb-3">
+		  			<label for="carrera" class="form-label">Carrera:</label>
+		  			<input type="text" class="form-control" value="${alumno.carrera}" id="carrera" name="carrera" />
+				</div>
+				<div class="mb-3">
+					<label for="nacimiento" class="form-label">Fecha de Nacimiento:</label>
+					<input type="date" class="form-control" value="${alumno.fechaNacimiento}" id="nacimiento" name="nacimiento" />
+				</div>
+				<button class="btn btn-primary" type="submit">Guardar</button>
+			</form>
 		</div>		
 	</body>
 </html>

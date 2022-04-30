@@ -16,6 +16,7 @@
 				<tr>
 					<th>ID</th>
 					<th>Nombre</th>
+					<th>Fecha Nacimiento</th>
 					<th>Carrera</th>
 					<th>Acciones</th>
 				</tr>
@@ -25,6 +26,7 @@
 				<tr>
 					<td><c:out value="${alumno.id}" /></td>
 					<td><c:out value="${alumno.nombre}" /></td>
+					<td><c:out value="${alumno.fechaNacimiento}" /></td>
 					<td><c:out value="${alumno.carrera}" /></td>
 					<td>
 						<a href="${pageContext.request.contextPath}/AlumnoController?accion=editar&amp;id=${alumno.id}">Editar</a> <%-- contextPath en este caso es /cft-web --%>

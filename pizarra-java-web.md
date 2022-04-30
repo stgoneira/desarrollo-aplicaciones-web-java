@@ -1,31 +1,44 @@
 Desarrollo Aplicaciones Web en Java
 ====================================
 
-Jueves 
-2022-04-28
-Sesión 8 de 17 
+Sábado
+2022-04-30 
+Sesión 10 de 17 
+
+BREAK de 11:00 a 11:15hrs 
 
 Para hoy 
-----------
-- CRUD 
+---------
+- Persistencia de fechas 
+- Trabajo con 2 o más tablas 
+- Trabajo con GIT 
 
-Actividad Edición (CRUD)
--------------------------
-1) Editamos el enlace de edición en la tabla o listado de Alumnos (entidad) 
-ej: <a href="${pageContext.request.contextPath}/AlumnoController?accion=editar&amp;id=${alumno.id}">Editar</a>
+Iniciar Repositorio - GIT
+--------------------------
+1) Abrir una CMD o PowerShell 
+2) Con comando "cd" ir a la carpeta del proyecto 
+3) Escribir el comando: "git init"
+4) Generar archivo ".gitignore" para omitir archivos de configuración de Eclipse. Recomendación si lo hace por el explorador de archivos, al crear seleccionar "Text Document" o "Documento de texto" 
+# contenido .gitignore 
+.settings
+build
+.classpath
+.project
 
-2) Recuerde que los enlaces siempre envía un mensaje por el método GET al Servlet. 
-Por lo tanto, agregamos un bloque al switch del doGet() del Servlet para soportar la acción "editar". 
 
-3) En el bloque del switch (editar), recuperamos el parámetro enviado por la URL id (representa el ID del alumno). 
-
-4) Generamos un método getAlumnoById(int alumnoId) para recuperar el Alumno desde la BD. 
-
-5) El método getAlumnoById() lo invocamos desde el bloque switch (editar) para recuperar el Alumno desde la BD. Para enviarlo al JSP (vista del formulario) y que sea posible la edición (despachar).
-
-6) En el JSP del formulario configuramos los atributos value usando Expression Language para mostrar los valores desde el objeto alumno 
-
-7) Finalmente, en el método doPost() del Servlet agregamos el bloque correspondiente para cuando el id del alumno NO es igual a 0 y queremos editar en vez de insertar. 
+Agregar campo fecha a entidad Alumno (cft-web)
+-----------------------------------------------
+1) Agregar campo en el formulario para registrar la fecha de nacimiento del alumno 
+2) Agregar la columna fecha_nacimiento a la tabla de la BD 
+ALTER TABLE alumnos ADD COLUMN fecha_nacimiento DATE;
+3) Editar la clase modelo en Java para agregar el atributo fechaNacimiento, su getter, setter y el soporte a nivel de los constructores.
+4) Editar el Servlet 
+5) Editar métodos que guardan y/o editan la tabla de la BD 
+	5.1) crearAlumno()
+	5.2) editarAlumno() 
+	5.3) getAlumnos() 
+	5.4) getAlumnoById()
+6) Editar JSP que muestra el listado para agregar columna para la fecha 
 
 Trabajos Módulo 5
 -------------------
@@ -43,6 +56,7 @@ Ejercicio de cálculo de áreas
 
 4) Evidencia Portafolio Módulo 30-04-2022 
 CRUD de las entidades Alumno y Carrera 
+
 
 Temáticas 
 ----------- 
@@ -76,6 +90,77 @@ Temáticas
 	* Data Access Object (DAO) 
 	* Data Transfer Object (DTO) 
 - Trabajo con Archivos 
+
+///////////////////////////////////////////  
+
+Viernes 
+2022-04-29
+Sesión 9 de 17 
+
+BREAK de 20:25 a 20:40hrs 
+
+Objetivos de hoy 
+-------------------
+- Realizar CRUD de la entidad principal de uno de los 4 trabajos del módulo 
+- Se solicita generar repositorio Github para cada uno de los proyectos, utilizando el prefijo DWJ0025-nombre-del-proyecto 
+- Asegúrese de entender correctamente lo siguiente: 
+	* Servlets y cómo se definen sus URLs 
+	* Servlets y el mapeo hacia los métodos HTTP 
+	* Cómo enviar información a un Servlet desde la URL 
+	* Cómo enviar información desde un formulario HTML a un Servlet 
+	* Cómo despachar la responsabilidad desde un Servlet hacia un JSP 
+	* Entender cómo cargar librerías en el proyecto WEB 
+	* Entender el uso de las etiquetas JSTL, al menos c:forEach 
+	* Entender la importancia de escapar las salidas de string para evitar ataques XSS 
+	* Entender la sintaxis de Expression Language y el uso dentro del JSP 
+	* Entender la integración entre Tomcat, la Base de Datos y mi proyecto WEB. 
+
+
+
+///////////////////////////////////////////  
+
+Jueves 
+2022-04-28
+Sesión 8 de 17 
+
+BREAK 20:25 a 20:40
+
+Para hoy 
+----------
+- CRUD 
+
+Actividad Edición (CRUD)
+-------------------------
+1) Editamos el enlace de edición en la tabla o listado de Alumnos (entidad) 
+ej: <a href="${pageContext.request.contextPath}/AlumnoController?accion=editar&amp;id=${alumno.id}">Editar</a>
+
+2) Recuerde que los enlaces siempre envía un mensaje por el método GET al Servlet. 
+Por lo tanto, agregamos un bloque al switch del doGet() del Servlet para soportar la acción "editar". 
+
+3) En el bloque del switch (editar), recuperamos el parámetro enviado por la URL id (representa el ID del alumno). 
+
+4) Generamos un método getAlumnoById(int alumnoId) para recuperar el Alumno desde la BD. 
+
+5) El método getAlumnoById() lo invocamos desde el bloque switch (editar) para recuperar el Alumno desde la BD. Para enviarlo al JSP (vista del formulario) y que sea posible la edición (despachar).
+
+6) En el JSP del formulario configuramos los atributos value usando Expression Language para mostrar los valores desde el objeto alumno 
+
+7) Finalmente, en el método doPost() del Servlet agregamos el bloque correspondiente para cuando el id del alumno NO es igual a 0 y queremos editar en vez de insertar. 
+
+
+Ej. SQL iteración 2
+---------------------
+CREATE TABLE carreras (
+	id SERIAL PRIMARY KEY,
+	nombre CHAR(20) NOT NULL
+);
+
+CREATE TABLE alumnos2 (
+	id SERIAL PRIMARY KEY,
+	nombre CHAR(20) NOT NULL,
+	carrera_id int REFERENCES carreras(id)
+);
+
 
 ///////////////////////////////////////////  
 
