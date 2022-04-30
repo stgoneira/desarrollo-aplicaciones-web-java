@@ -11,3 +11,5 @@ out
 build
 .classpath
 .project
+.DS_Store
+

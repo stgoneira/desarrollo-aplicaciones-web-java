@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
+  <display-name>prueba</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error/404.jsp</location>
+  </error-page>
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/error/50x.jsp</location>
+  </error-page>
+  <error-page>
+  	<location>/error/error.jsp</location>
+  </error-page>
+  <resource-ref>
+      <description>PostgreSQL ElephantQL</description>
+      <res-ref-name>jdbc/postgres</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+  <servlet>
+    <description></description>
+    <display-name>AlumnoController</display-name>
+    <servlet-name>AlumnoController</servlet-name>
+    <servlet-class>controller.AlumnoController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlumnoController</servlet-name>
+    <url-pattern>/alumnos</url-pattern>
+    <url-pattern>/alumno/crear</url-pattern>
+    <url-pattern>/alumno/editar</url-pattern>
+    <url-pattern>/alumno/guardar</url-pattern>
+    <url-pattern>/alumno/eliminar</url-pattern>
+  </servlet-mapping>
+</web-app>
