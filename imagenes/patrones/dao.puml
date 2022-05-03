@@ -1,0 +1,9 @@
+@startuml superclase 
+
+interface DataAccessObject {}
+class DataAccessObjectImpl implements DataAccessObject {}
+class DataTransferObject {} 
+class Main {}
+
+
+@enduml 

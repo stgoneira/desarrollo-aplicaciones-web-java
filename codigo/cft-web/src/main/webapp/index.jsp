@@ -18,6 +18,16 @@
 					Crear Alumno
 				</a>
 			</li>
+			<li>
+				<a href="/cft-web/CarreraController?accion=listar">
+					Ver Carreras
+				</a>
+			</li>
+			<li>
+				<a href="/cft-web/CarreraController?accion=form">
+					Crear Carrera
+				</a>
+			</li>
 		</ul>
 	</body>
 </html>

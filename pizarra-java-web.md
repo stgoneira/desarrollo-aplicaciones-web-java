@@ -1,44 +1,24 @@
 Desarrollo Aplicaciones Web en Java
 ====================================
 
-Sábado
-2022-04-30 
-Sesión 10 de 17 
+///////////////////////////////////////////  
 
-BREAK de 11:00 a 11:15hrs 
+Lunes 
+2022-05-02 
+Sesión 11 de 17 
+
+BREAK de 20:02 a 20:17hrs
 
 Para hoy 
 ---------
-- Persistencia de fechas 
+- Patrón Data Access Object (DAO) 
 - Trabajo con 2 o más tablas 
-- Trabajo con GIT 
 
-Iniciar Repositorio - GIT
---------------------------
-1) Abrir una CMD o PowerShell 
-2) Con comando "cd" ir a la carpeta del proyecto 
-3) Escribir el comando: "git init"
-4) Generar archivo ".gitignore" para omitir archivos de configuración de Eclipse. Recomendación si lo hace por el explorador de archivos, al crear seleccionar "Text Document" o "Documento de texto" 
-# contenido .gitignore 
-.settings
-build
-.classpath
-.project
+Actividad 
+-----------
+Utilizando el Patrón Data Access Object (DAO) implemente las clases e interfaces necesarias para soportar la entidad Carrera. 
 
 
-Agregar campo fecha a entidad Alumno (cft-web)
------------------------------------------------
-1) Agregar campo en el formulario para registrar la fecha de nacimiento del alumno 
-2) Agregar la columna fecha_nacimiento a la tabla de la BD 
-ALTER TABLE alumnos ADD COLUMN fecha_nacimiento DATE;
-3) Editar la clase modelo en Java para agregar el atributo fechaNacimiento, su getter, setter y el soporte a nivel de los constructores.
-4) Editar el Servlet 
-5) Editar métodos que guardan y/o editan la tabla de la BD 
-	5.1) crearAlumno()
-	5.2) editarAlumno() 
-	5.3) getAlumnos() 
-	5.4) getAlumnoById()
-6) Editar JSP que muestra el listado para agregar columna para la fecha 
 
 Trabajos Módulo 5
 -------------------
@@ -90,6 +70,49 @@ Temáticas
 	* Data Access Object (DAO) 
 	* Data Transfer Object (DTO) 
 - Trabajo con Archivos 
+
+///////////////////////////////////////////  
+
+Sábado
+2022-04-30 
+Sesión 10 de 17 
+
+BREAK de 11:00 a 11:15hrs 
+
+Para hoy 
+---------
+- Persistencia de fechas 
+- Trabajo con 2 o más tablas 
+- Trabajo con GIT 
+
+Iniciar Repositorio - GIT
+--------------------------
+1) Abrir una CMD o PowerShell 
+2) Con comando "cd" ir a la carpeta del proyecto 
+3) Escribir el comando: "git init"
+4) Generar archivo ".gitignore" para omitir archivos de configuración de Eclipse. Recomendación si lo hace por el explorador de archivos, al crear seleccionar "Text Document" o "Documento de texto" 
+# contenido .gitignore 
+.settings
+build
+.classpath
+.project
+
+
+Agregar campo fecha a entidad Alumno (cft-web)
+-----------------------------------------------
+1) Agregar campo en el formulario para registrar la fecha de nacimiento del alumno 
+2) Agregar la columna fecha_nacimiento a la tabla de la BD 
+ALTER TABLE alumnos ADD COLUMN fecha_nacimiento DATE;
+3) Editar la clase modelo en Java para agregar el atributo fechaNacimiento, su getter, setter y el soporte a nivel de los constructores.
+4) Editar el Servlet 
+5) Editar métodos que guardan y/o editan la tabla de la BD 
+	5.1) crearAlumno()
+	5.2) editarAlumno() 
+	5.3) getAlumnos() 
+	5.4) getAlumnoById()
+6) Editar JSP que muestra el listado para agregar columna para la fecha 
+
+
 
 ///////////////////////////////////////////  
 

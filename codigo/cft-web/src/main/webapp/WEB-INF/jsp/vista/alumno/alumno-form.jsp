@@ -16,8 +16,12 @@
 		  			<input type="text" class="form-control" value="${alumno.nombre}" id="nombre" name="nombre" />
 				</div>
 				<div class="mb-3">
-		  			<label for="carrera" class="form-label">Carrera:</label>
-		  			<input type="text" class="form-control" value="${alumno.carrera}" id="carrera" name="carrera" />
+		  			<label for="carrera" class="form-label">Carrera:</label>		  			
+		  			<select>
+		  			<c:forEach var="carrera" items="${carreras}">
+		  				<option value="${carrera.id}">${carrera.nombre}</option>
+		  			</c:forEach>
+		  			</select>
 				</div>
 				<div class="mb-3">
 					<label for="nacimiento" class="form-label">Fecha de Nacimiento:</label>
