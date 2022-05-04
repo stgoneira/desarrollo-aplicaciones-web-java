@@ -1,21 +1,14 @@
 Desarrollo Aplicaciones Web en Java
 ====================================
 
-Martes 
-2022-05-03 
-Sesión 12 de 17 
+Miércoles 
+2022-05-04 
+Sesión 13 de 17 
 
-BREAK de 20:50 a 21:05hrs 
-
-Objetivo del día 
+Objetivos del día 
 ------------------
-- Terminar ejemplo proyecto con 2 ó más tablas 
-- Avances en trabajos 
-
-Actividad Alumno-Carrera
--------------------------
-1) ALTER TABLE alumnos DROP COLUMN carrera; 
-2) ALTER TABLE alumnos ADD COLUMN carrera_id int REFERENCES carreras(id);
+- Entender el potencial de los genéricos en Java (aplicado al patrón DAO) 
+- Avanzar en los trabajos del módulo 5 
 
 Trabajos Módulo 5
 -------------------
@@ -67,6 +60,24 @@ Temáticas
 	* Data Access Object (DAO) 
 	* Data Transfer Object (DTO) 
 - Trabajo con Archivos 
+
+///////////////////////////////////////////  
+
+Martes 
+2022-05-03 
+Sesión 12 de 17 
+
+BREAK de 20:50 a 21:05hrs 
+
+Objetivo del día 
+------------------
+- Terminar ejemplo proyecto con 2 ó más tablas 
+- Avances en trabajos 
+
+Actividad Alumno-Carrera
+-------------------------
+1) ALTER TABLE alumnos DROP COLUMN carrera; 
+2) ALTER TABLE alumnos ADD COLUMN carrera_id int REFERENCES carreras(id);
 
 ///////////////////////////////////////////  
 
