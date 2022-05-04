@@ -11,6 +11,7 @@
 		<div class="container">
 		<h1>Alumnos</h1>
 		
+		<a class="btn btn-success" href="/cft-web/AlumnoController?accion=form">Crear</a>
 		<table class="table">
 			<thead>
 				<tr>

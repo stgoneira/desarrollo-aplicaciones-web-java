@@ -57,7 +57,8 @@ public class AlumnoDAOImp implements AlumnoDAO {
 			if(rs.next()) {
 				int id = rs.getInt("id");
 				String nombre = rs.getString("nombre");
-				String carrera = rs.getString("carrera");
+				int carreraId = Integer.parseInt( rs.getString("carrera_id") );
+				Carrera carrera = carreraDAO.findCarreraById(carreraId);
 				LocalDate fechaNacimiento = rs.getObject("fecha_nacimiento", LocalDate.class);
 				return new Alumno(id, nombre, carrera, fechaNacimiento);
 			} else {
@@ -68,13 +69,13 @@ public class AlumnoDAOImp implements AlumnoDAO {
 
 	@Override
 	public void crearAlumno(Alumno alumno) throws SQLException, NamingException {
-		String sql = "INSERT INTO alumnos(nombre, carrera, fecha_nacimiento) VALUES(?, ?, ?)";
+		String sql = "INSERT INTO alumnos(nombre, carrera_id, fecha_nacimiento) VALUES(?, ?, ?)";
 		try (
 			Connection conexion = DbUtils.getConexion();
 			PreparedStatement declaracion = conexion.prepareStatement(sql);
 		) {
 			declaracion.setString(1, alumno.getNombre());
-			declaracion.setString(2, alumno.getCarrera());
+			declaracion.setInt(2, alumno.getCarrera().getId());
 			declaracion.setObject(3, alumno.getFechaNacimiento());
 			int filasInsertadas = declaracion.executeUpdate();
 		}	
@@ -83,14 +84,14 @@ public class AlumnoDAOImp implements AlumnoDAO {
 	@Override
 	public void editarAlumno(Alumno alumno) throws SQLException, NamingException {
 		String sql = "UPDATE alumnos"
-				+" SET nombre = ?, carrera = ?, fecha_nacimiento = ?"
+				+" SET nombre = ?, carrera_id = ?, fecha_nacimiento = ?"
 				+" WHERE id = ?";
 		try (
 			Connection conexion = DbUtils.getConexion();
 			PreparedStatement declaracion = conexion.prepareStatement(sql);
 		) {
 			declaracion.setString(1, alumno.getNombre());
-			declaracion.setString(2, alumno.getCarrera());
+			declaracion.setInt(2, alumno.getCarrera().getId());
 			declaracion.setObject(3, alumno.getFechaNacimiento());
 			declaracion.setInt(4, alumno.getId());
 			declaracion.executeUpdate();

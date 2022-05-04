@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,10 +19,17 @@
 		  			<input type="text" class="form-control" value="${alumno.nombre}" id="nombre" name="nombre" />
 				</div>
 				<div class="mb-3">
-		  			<label for="carrera" class="form-label">Carrera:</label>		  			
-		  			<select>
+		  			<label for="carrera_id" class="form-label">Carrera:</label>		  			
+		  			<select name="carrera_id" id="carrera_id">
 		  			<c:forEach var="carrera" items="${carreras}">
-		  				<option value="${carrera.id}">${carrera.nombre}</option>
+		  				<c:choose>
+		  					<c:when test="${carrera.id == alumno.carrera.id}">
+		  						<option selected="selected" value="${carrera.id}">${carrera.nombre}</option>
+		  					</c:when>
+		  					<c:otherwise>
+		  						<option value="${carrera.id}">${carrera.nombre}</option>
+		  					</c:otherwise>
+		  				</c:choose>		  				
 		  			</c:forEach>
 		  			</select>
 				</div>

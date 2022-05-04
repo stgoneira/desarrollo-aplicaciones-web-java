@@ -1,24 +1,21 @@
 Desarrollo Aplicaciones Web en Java
 ====================================
 
-///////////////////////////////////////////  
+Martes 
+2022-05-03 
+Sesión 12 de 17 
 
-Lunes 
-2022-05-02 
-Sesión 11 de 17 
+BREAK de 20:50 a 21:05hrs 
 
-BREAK de 20:02 a 20:17hrs
+Objetivo del día 
+------------------
+- Terminar ejemplo proyecto con 2 ó más tablas 
+- Avances en trabajos 
 
-Para hoy 
----------
-- Patrón Data Access Object (DAO) 
-- Trabajo con 2 o más tablas 
-
-Actividad 
------------
-Utilizando el Patrón Data Access Object (DAO) implemente las clases e interfaces necesarias para soportar la entidad Carrera. 
-
-
+Actividad Alumno-Carrera
+-------------------------
+1) ALTER TABLE alumnos DROP COLUMN carrera; 
+2) ALTER TABLE alumnos ADD COLUMN carrera_id int REFERENCES carreras(id);
 
 Trabajos Módulo 5
 -------------------
@@ -70,6 +67,23 @@ Temáticas
 	* Data Access Object (DAO) 
 	* Data Transfer Object (DTO) 
 - Trabajo con Archivos 
+
+///////////////////////////////////////////  
+
+Lunes 
+2022-05-02 
+Sesión 11 de 17 
+
+BREAK de 20:02 a 20:17hrs
+
+Para hoy 
+---------
+- Patrón Data Access Object (DAO) 
+- Trabajo con 2 o más tablas 
+
+Actividad 
+-----------
+Utilizando el Patrón Data Access Object (DAO) implemente las clases e interfaces necesarias para soportar la entidad Carrera. 
 
 ///////////////////////////////////////////  
 

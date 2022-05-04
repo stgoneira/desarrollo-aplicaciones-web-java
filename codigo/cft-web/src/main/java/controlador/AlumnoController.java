@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import modelo.Alumno;
+import modelo.Carrera;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -22,10 +23,13 @@ import javax.sql.DataSource;
 
 import dao.AlumnoDAO;
 import dao.AlumnoDAOImp;
+import dao.CarreraDAO;
+import dao.CarreraDAOImp;
 
 public class AlumnoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+	private CarreraDAO carreraDAO;
 	private AlumnoDAO alumnoDAO;
 
     public AlumnoController() {
@@ -35,7 +39,8 @@ public class AlumnoController extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		this.alumnoDAO = new AlumnoDAOImp();
+		this.carreraDAO = new CarreraDAOImp();
+		this.alumnoDAO = new AlumnoDAOImp( this.carreraDAO );
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -58,6 +63,8 @@ public class AlumnoController extends HttpServlet {
 			case "editar":
 				try {
 					int alumnoId = Integer.parseInt( request.getParameter("id") );
+					List<Carrera> carreras = carreraDAO.findAllCarreras();					
+					request.setAttribute("carreras", carreras);
 					Alumno alumno = alumnoDAO.findAlumnoById(alumnoId);
 					request.setAttribute("alumno", alumno);
 					vistaJSP = "/WEB-INF/jsp/vista/alumno/alumno-form.jsp";
@@ -75,6 +82,15 @@ public class AlumnoController extends HttpServlet {
 				break;
 			case "form":
 				vistaJSP = "/WEB-INF/jsp/vista/alumno/alumno-form.jsp";
+				List<Carrera> carreras = null;
+				try {
+					carreras = carreraDAO.findAllCarreras();
+				} catch(Exception e) {
+					e.printStackTrace();
+					response.sendError(500);
+					return;
+				}
+				request.setAttribute("carreras", carreras);
 				request
 					.getRequestDispatcher(vistaJSP)
 					.forward(request, response)
@@ -106,8 +122,17 @@ public class AlumnoController extends HttpServlet {
 			System.err.println("id se setea a 0 de manera automática.");
 		}
 		
-		String nombre 	= request.getParameter("nombre");
-		String carrera 	= request.getParameter("carrera");
+		String nombre 		= request.getParameter("nombre");
+		Carrera carrera 	= null;
+		try {
+			int carreraId 	= Integer.parseInt( request.getParameter("carrera_id") );
+			carrera 		= carreraDAO.findCarreraById(carreraId);	
+		} catch (SQLException | NamingException e) {
+			e.printStackTrace();
+			response.sendError(500);
+			return;
+		}
+		
 		// al servlet le llega el parámetro como string 
 		// el control input[date] de HTML5 devuelve el string en formato ISO8601 (yyyy-mm-dd) 
 		// así que debemos parsear ese string para convertir en una fecha de Java 
