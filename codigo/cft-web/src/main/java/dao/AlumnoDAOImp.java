@@ -15,7 +15,7 @@ import modelo.Alumno;
 import modelo.Carrera;
 
 public class AlumnoDAOImp implements AlumnoDAO {
-
+	
 	private CarreraDAO carreraDAO;
 	
 	public AlumnoDAOImp(CarreraDAO carreraDAO) {
@@ -34,7 +34,7 @@ public class AlumnoDAOImp implements AlumnoDAO {
 				// recuperar a variables datos de la tabla 
 				int id = rs.getInt("id");
 				String nombre = rs.getString("nombre");
-				int carreraId = Integer.parseInt( rs.getString("carrera_id") );
+				int carreraId = rs.getInt("carrera_id");
 				Carrera carrera = carreraDAO.findCarreraById(carreraId);
 				LocalDate fechaNacimiento = rs.getObject("fecha_nacimiento", LocalDate.class);
 				// instanciar objeto alumno 

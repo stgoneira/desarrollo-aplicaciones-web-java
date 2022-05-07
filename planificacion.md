@@ -45,7 +45,10 @@
 
 16.
 
-17.
+17.1. Identificar los principales códigos de error de HTTP 
+17.2. Usar correctamente los códigos de error en el proyecto web 
+17.3. Generar páginas de error usando JSP 
+17.4. Configurar páginas de error en proyecto web 
 
 
 

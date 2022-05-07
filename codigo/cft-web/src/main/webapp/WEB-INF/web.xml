@@ -5,6 +5,17 @@
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/error/500.jsp</location>
+  </error-page>
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error/404.jsp</location>
+  </error-page>
+  <error-page>
+  	<location>/error/error.jsp</location>
+  </error-page>
   <servlet>
     <description></description>
     <display-name>AlumnoController</display-name>

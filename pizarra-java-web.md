@@ -1,14 +1,17 @@
 Desarrollo Aplicaciones Web en Java
 ====================================
 
-Miércoles 
-2022-05-04 
-Sesión 13 de 17 
+Sábado  
+2022-05-07
+Sesión 16 de 17 
+
+BREAK de 11:04 a 11:19hrs
 
 Objetivos del día 
 ------------------
-- Entender el potencial de los genéricos en Java (aplicado al patrón DAO) 
-- Avanzar en los trabajos del módulo 5 
+16.1. Revisión diseño ER ejercicio 
+16.2. Sesiones con BD 
+16.3. Validaciones 
 
 Trabajos Módulo 5
 -------------------
@@ -60,6 +63,69 @@ Temáticas
 	* Data Access Object (DAO) 
 	* Data Transfer Object (DTO) 
 - Trabajo con Archivos 
+
+///////////////////////////////////////////  
+
+Viernes 
+2022-05-06
+Sesión 15 de 17 
+
+BREAK de 20:30 hasta 20:45hrs
+
+Objetivos del día 
+------------------
+15.1. Identificar los usos y los escenarios de las sesiones en el mundo web 
+15.2. Reconocer dónde se almacenan los datos de las sesiones 
+15.3. Reconocer como almacenar y terminar sesiones desde un Servlet 
+15.4. Usar las sesiones para un caso de autenticación 
+15.5. Avanzar en trabajos Módulo 5  
+
+Proyecto Autenticación 
+------------------------
+
+src/main/java
+	controlador 
+		AutenticacionController
+		AdministracionController 
+index.jsp 
+login.jsp 
+WEB-INF/
+	includes/
+		menu.jsp 
+	admin/ 
+		administracion1.jsp 
+		administracion2.jsp 
+		
+
+
+///////////////////////////////////////////  
+
+Jueves 
+2022-05-05
+Sesión 14 de 17 
+
+BREAK 20:13 a 20:28hrs 
+
+Objetivos del día 
+------------------
+14.1. Identificar los principales códigos de error de HTTP 
+14.2. Usar correctamente los códigos de error en el proyecto web 
+14.3. Generar páginas de error usando JSP 
+14.4. Configurar páginas de error en proyecto web 
+14.5. Avanzar en trabajos Módulo 5 
+
+///////////////////////////////////////////  
+
+Miércoles 
+2022-05-04 
+Sesión 13 de 17 
+
+BREAK 20:30 a 20:45hrs 
+
+Objetivos del día 
+------------------
+- Entender el potencial de los genéricos en Java (aplicado al patrón DAO) 
+- Avanzar en los trabajos del módulo 5 
 
 ///////////////////////////////////////////  
 

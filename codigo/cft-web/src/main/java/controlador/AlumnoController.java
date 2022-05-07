@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import modelo.Alumno;
 import modelo.Carrera;
+import validator.AlumnoValidator;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -115,44 +116,48 @@ public class AlumnoController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = 0;
-		try {
-			id = Integer.parseInt( request.getParameter("id") );
-		} catch (NumberFormatException e) {
-			System.err.println("id se setea a 0 de manera automática.");
-		}
+		String idStr 				= request.getParameter("id");
+		String nombreStr 			= request.getParameter("nombre");
+		String fechaNacimientoStr 	= request.getParameter("nacimiento");
 		
-		String nombre 		= request.getParameter("nombre");
+		AlumnoValidator validador 	= new AlumnoValidator(idStr, nombreStr, fechaNacimientoStr);
+		Alumno alumno 				= validador.makeObject();
+		
 		Carrera carrera 	= null;
 		try {
 			int carreraId 	= Integer.parseInt( request.getParameter("carrera_id") );
-			carrera 		= carreraDAO.findCarreraById(carreraId);	
+			carrera 		= carreraDAO.findCarreraById(carreraId);			
+			// carreras para pasarle al form 
+			List<Carrera> carreras = carreraDAO.findAllCarreras();
+			request.setAttribute("carreras", carreras);
 		} catch (SQLException | NamingException e) {
 			e.printStackTrace();
 			response.sendError(500);
 			return;
 		}
 		
-		// al servlet le llega el parámetro como string 
-		// el control input[date] de HTML5 devuelve el string en formato ISO8601 (yyyy-mm-dd) 
-		// así que debemos parsear ese string para convertir en una fecha de Java 
-		LocalDate fechaNacimiento = LocalDate.parse( request.getParameter("nacimiento") ) ;
+		// si alumno es null, es porque se produjeron errores de validación 
+		if( alumno == null ) {
+			request.setAttribute("validador", validador);
+			String jspForm = "/WEB-INF/jsp/vista/alumno/alumno-form.jsp";
+			request.getRequestDispatcher(jspForm).forward(request, response);
+			return;
+		}		
 		
-		if(id == 0) {
+		alumno.setCarrera(carrera);				
+		if(alumno.getId() == 0) {
 			// crear el alumno 
-			Alumno alumnoNuevo = new Alumno(nombre, carrera, fechaNacimiento);
 			try {
-				alumnoDAO.crearAlumno(alumnoNuevo);
+				alumnoDAO.crearAlumno(alumno);
 				response.sendRedirect("/cft-web/AlumnoController?accion=listar");
 			} catch (SQLException | NamingException e) {				
 				e.printStackTrace();
 				response.sendError(500);
 			}
 		} else {
-			// editar
-			Alumno alumnoAEditar = new Alumno(id, nombre, carrera, fechaNacimiento);
+			// editar			
 			try {
-				alumnoDAO.editarAlumno(alumnoAEditar);
+				alumnoDAO.editarAlumno(alumno);
 				response.sendRedirect("/cft-web/AlumnoController?accion=listar");
 			} catch (SQLException | NamingException e) {
 				e.printStackTrace();
