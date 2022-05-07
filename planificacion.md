@@ -48,4 +48,6 @@
 17.
 
 
-
+- Reconocer como activar o desactivar una sesión en un documento JSP 
+- Identificar los riesgos de seguridad de las sesiones (Man in the middle, Session Fixation, Session Hijacking)
+- 
